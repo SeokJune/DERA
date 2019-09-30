@@ -1,0 +1,23 @@
+﻿Factor Analysis in python using factor_analyzer package
+https://www.datacamp.com/community/tutorials/introduction-factor-analysis
+원래 변수들을 서류 유사성 동질성에 따라 소수의 요인들로 묶어주는 차원축소 통계기법
+
+과정 자료입력- 상관관계 산출(행렬) 변수상관관계 높으면 요인분석 의미 커짐
+요인추출 모형
+PCA 요인수 최소화 정보손실 최소화 CFA 변수들 사이 존재하는 차원 규명 변수간의 구조 파악
+
+
+//radom forest
+https://blog.naver.com/pmw9440/221596909202
+
+앙상블 방식
+예측기(분류, 희귀모델) 배깅, 부스팅, 스태킹
+
+결정트리, 앙상블: 보팅, 배깅(랜덤포레스트), 부스팅(GBM, XGBoost)
+https://blog.naver.com/taewwon/221600328557
+
+
+
+
+
+
