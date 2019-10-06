@@ -7,7 +7,7 @@ from firebase_admin import firestore
 
 # FireBase
 def FIREBASECONFIG():
-    cred = credentials.Certificate("C:/Users/teufe/Downloads/serviceAccountKey.json")
+    cred = credentials.Certificate("./serviceAccountKey.json")
     firebase_admin.initialize_app(cred)
     
     return firestore.client()
