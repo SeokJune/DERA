@@ -7,7 +7,7 @@ from firebase_admin import firestore
 
 # FireBase
 def FIREBASECONFIG():
-    cred = credentials.Certificate("./serviceAccountKey.json")
+    cred = credentials.Certificate("./KEY/serviceAccountKey.json")
     firebase_admin.initialize_app(cred)
     
     return firestore.client()
@@ -130,7 +130,7 @@ def KMA_WEATHER(db):
     print('KMA_WEATHER SUCCESS')
 
 ### RUN
-#COLD_SIDO(FIREBASECONFIG())
-COLD_PATIENT(FIREBASECONFIG())
+COLD_SIDO(FIREBASECONFIG())
+#COLD_PATIENT(FIREBASECONFIG())
 #KMA_SIDO(FIREBASECONFIG())
 #KMA_WEATHER(FIREBASECONFIG())
