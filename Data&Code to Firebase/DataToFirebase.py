@@ -60,7 +60,7 @@ def KMA_SIDO(db):
 def KMA_WEATHER(db):
     kma_weather = pd.read_csv('./KMA/WEATHER.csv', encoding='utf-8')
     
-    for index in kma_sido.index:
+    for index in kma_weather.index:
         doc_ref = db.collection(u'KMA_WEATHER').document()
         
         doc_ref.set({
@@ -131,6 +131,6 @@ def KMA_WEATHER(db):
 
 ### RUN
 #COLD_SIDO(FIREBASECONFIG())
-#COLD_PATIENT(FIREBASECONFIG())
-KMA_SIDO(FIREBASECONFIG())
+COLD_PATIENT(FIREBASECONFIG())
+#KMA_SIDO(FIREBASECONFIG())
 #KMA_WEATHER(FIREBASECONFIG())
