@@ -112,7 +112,7 @@ def run(job = 1):
         stnInfo = dropCols(stnInfo, 1)
         pWeather = mergeDataFrame(weather, stnInfo)
         # Save csv file
-        pWeather.to_csv('../Data/pWeather_.csv', index=False, na_rep=0, encoding='euc-kr')
+        pWeather.to_csv('../Data/pWeather.csv', index=False, na_rep=0, encoding='euc-kr')
     else:
         print('---')
 
