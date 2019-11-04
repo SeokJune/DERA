@@ -5,7 +5,10 @@ import numpy as np
 # Read csv file
 def readCSV(num = 1):
     if num == 0:
-        weather = pd.read_csv('../Data/weather.csv', encoding='euc-kr')
+        # 광주, 2010.10.01. ~ 2019.09.30.
+        #weather = pd.read_csv('../Data/weather.csv', encoding='euc-kr')
+        # 전국, 2010.01.01. ~ 2019.11.03.
+        weather = pd.read_csv('../Data/weather2.csv', encoding='euc-kr')
         stnInfo = pd.read_csv('../Data/stnInfo.csv', encoding='euc-kr')
 
         return weather, stnInfo
@@ -97,22 +100,35 @@ def dropCols(dataFrame, num):
 #Merge Data
 def mergeDataFrame(weather, stnInfo):
     Data = pd.merge(weather, stnInfo, on='지점', how='left')
+    '''
     Data = Data[['지점', '지점명', '일시', '평균기온(°C)', '최저기온(°C)',
                 '최고기온(°C)', '일강수량(mm)', '평균 이슬점온도(°C)', '최소 상대습도(%)', '평균 상대습도(%)',
                 '평균 증기압(hPa)', '평균 현지기압(hPa)', '최고 해면기압(hPa)', '최저 해면기압(hPa)', '평균 해면기압(hPa)',
                 '가조시간(hr)', '합계 일조 시간(hr)', '합계 일사(MJ/m2)', '일 최심신적설(cm)', '일 최심적설(cm)',
+                '평균 전운량(1/10)', '평균 중하층운량(1/10)', '평균 지면온도(°C)', '최저 초상온도(°C)', 'Rain']]
+    '''
+    Data = Data[['지점', '지점명', '일시', '평균기온(°C)', '최저기온(°C)',
+                '최고기온(°C)', '일강수량(mm)', '평균 이슬점온도(°C)', '최소 상대습도(%)', '평균 상대습도(%)',
+                '평균 증기압(hPa)', '평균 현지기압(hPa)', '최고 해면기압(hPa)', '최저 해면기압(hPa)', '평균 해면기압(hPa)',
+                '가조시간(hr)', '합계 일조시간(hr)', '합계 일사량(MJ/m2)', '일 최심신적설(cm)', '일 최심적설(cm)',
                 '평균 전운량(1/10)', '평균 중하층운량(1/10)', '평균 지면온도(°C)', '최저 초상온도(°C)', 'Rain']]
     return Data
 
 # Run
 def run(job = 1):
     if job == 0:
+        print(1)
         weather, stnInfo = readCSV(0)
+        print(2)
         weather = dropCols(weather, 0)
+        print(3)
         stnInfo = dropCols(stnInfo, 1)
+        print(4)
         pWeather = mergeDataFrame(weather, stnInfo)
+        print(5)
         # Save csv file
-        pWeather.to_csv('../Data/pWeather.csv', index=False, na_rep=0, encoding='euc-kr')
+        #pWeather.to_csv('../Data/pWeather.csv', index=False, na_rep=0, encoding='euc-kr')
+        pWeather.to_csv('../Data/pWeather2.csv', index=False, na_rep=0, encoding='euc-kr')
     else:
         print('---')
 
