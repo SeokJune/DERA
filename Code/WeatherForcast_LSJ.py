@@ -8,7 +8,8 @@ from sklearn import preprocessing
 import sklearn.metrics as metrics 
 
 # 전처리 된 데이터 가져오기
-Weather = pd.read_csv('../Data/pWeather.csv', encoding='euc-kr')
+#Weather = pd.read_csv('../Data/pWeather.csv', encoding='euc-kr')
+Weather = pd.read_csv('../Data/pWeather2.csv', encoding='euc-kr')
 
 # 데이터를 Train, Test 데이터로 분할
 X_train, X_test, Y_train, Y_test = train_test_split(Weather.iloc[:,4:-1],
@@ -29,6 +30,7 @@ result = []
 count = 1000
 
 for cnt in range(0, count):
+    print(cnt + 1)
     # 훈련
     rfc.fit(X_train, Y_train.values.ravel())
     # train과 test에 해당하는 예측결과
